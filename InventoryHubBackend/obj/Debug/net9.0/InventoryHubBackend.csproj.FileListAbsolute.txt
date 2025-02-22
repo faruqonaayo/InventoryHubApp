@@ -26,3 +26,4 @@ C:\Faruq Software Development\My Projects\CSharp\Full-Stack\InventoryHubApp\Inve
 C:\Faruq Software Development\My Projects\CSharp\Full-Stack\InventoryHubApp\InventoryHubBackend\obj\Debug\net9.0\InventoryHubBackend.pdb
 C:\Faruq Software Development\My Projects\CSharp\Full-Stack\InventoryHubApp\InventoryHubBackend\obj\Debug\net9.0\InventoryHubBackend.genruntimeconfig.cache
 C:\Faruq Software Development\My Projects\CSharp\Full-Stack\InventoryHubApp\InventoryHubBackend\obj\Debug\net9.0\ref\InventoryHubBackend.dll
+C:\Faruq Software Development\My Projects\CSharp\Full-Stack\InventoryHubApp\InventoryHubBackend\obj\Debug\net9.0\InventoryHubBackend.sourcelink.json

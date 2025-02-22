@@ -53,6 +53,8 @@
     private Product[]? products;
     private string? errorMessage;
     private const int TimeoutInSeconds = 30;
+    private static DateTimeOffset cacheExpiration;
+    private static Product[]? cacheProducts;
 
     protected override async Task OnInitializedAsync()
     {
@@ -63,8 +65,18 @@
     {
         try
         {
+            if (cacheProducts != null && cacheExpiration > DateTimeOffset.Now)
+            {
+                products = cacheProducts;
+                return;
+            }
+
             using var cts = new CancellationTokenSource(TimeSpan.FromSeconds(TimeoutInSeconds));
             products = await HttpClient.GetFromJsonAsync<Product[]>("/api/productlist", cts.Token);
+
+            // Cache the products and set the cache expiration (e.g., 5 minutes)
+            cacheProducts = products;
+            cacheExpiration = DateTimeOffset.Now.AddMinutes(5);
         }
         catch (OperationCanceledException)
         {
